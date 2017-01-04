@@ -19,3 +19,6 @@ db_from_env_dev = os.environ.get('DATABASE_URL_DEV')
 db_from_env = dj_database_url.config(db_from_env_dev)
 
 DATABASES = {'default': db_from_env}
+
+# Only in development to allow all hosts
+CORS_ORIGIN_ALLOW_ALL = True
