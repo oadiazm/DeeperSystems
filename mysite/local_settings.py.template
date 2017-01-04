@@ -9,8 +9,13 @@ ALLOWED_HOSTS = ['*']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Only in production
-# DATABASES = {'default': dj_database_url.config()}
+# Only in production with $DATABASE_URL
+# 'postgres://user:password@localhost:5432/db'
+# db_from_env = dj_database_url.config()
 
-DATABASES = {'default': dj_database_url.config(
-    default=os.environ.get('DATABASE_URL_DEV'))}
+# Only in development with $DATABASE_URL_DEV
+# 'postgres://user:password@localhost:5432/db'
+db_from_env_dev = os.environ.get('DATABASE_URL_DEV')
+db_from_env = dj_database_url.config(db_from_env_dev)
+
+DATABASES = {'default': db_from_env}
