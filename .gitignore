@@ -1,0 +1,16 @@
+*.bak
+*.db
+*.iws
+*.log
+*.pid
+*.pot
+*.pyc
+*.sublime-project
+*.sublime-workspace
+.coverage
+.directory
+*.DS_Store
+.idea/
+__pycache__/
+venv/
+local_settings.py
