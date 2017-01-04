@@ -9,7 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH=$PATH:/usr/local/Cellar/postgresql/9.6.1/bin/
     export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
     pip install -r requirements.txt
-    #chmod u+x manage.py
+    chmod u+x manage.py
     deactivate
   else
     source venv/bin/activate
